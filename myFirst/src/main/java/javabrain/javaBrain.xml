@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ -->
+ 
+ 
+	<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+<!--  		 <context:component-scan base-package = "javabrain"/> -->
+
+	<context:annotation-config base-package = "javabrain" ></context:annotation-config>
+
+	<!-- <bean id="triangle" class="javabrain.Triangle">
+		<property name="pointA" ref="zeroPoint"></property>
+		<property name="pointB" ref="Point2"></property>
+		<property name="pointC">
+			<bean id="Point3" class="javabrain.Point">
+				<property name="x" value="20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+	</bean> -->
+<!-- 
+	<bean id="zeroPoint" class="javabrain.Point" >
+		<property name="x" value="${zeroPoint.x}" />
+		<property name="y" value="${zeroPoint.y}" />
+	</bean> -->
+	
+<!-- 		 <bean id="zeroPoint" class="javabrain.Point" > -->
+<!-- 		<constructor-arg name="x" value="${zeroPoint.x}" /> -->
+<!-- 		<constructor-arg name="y" value="${zeroPoint.y}" /> -->
+<!-- 	</bean>  -->
+
+
+
+
+	<bean id="Point2" class="javabrain.Point">
+		<property name="x" value="-20"></property>
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="Point3" class="javabrain.Point">
+	<qualifier value = "circleRelate"></qualifier>
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+
+<!-- 	<bean id="myList" class="javabrain.ListinSpring">
+		<property name="pointList">
+			<list>
+				<ref bean="zeroPoint" />
+				<ref bean="Point2" />
+				<ref bean="Point3" />
+			</list>
+		</property>
+	</bean> -->
+	
+<!-- 	<bean class = "javabrain.DisplayNameBeanPostProcessor"></bean>
+	
+	<bean class = "org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value = "classpath:javabrain/pointsconfig.properties"></property>
+	</bean> -->
+	
+	<bean id = "circle" class = "javabrain.Circle">
+<!-- 	<property name="center" ref = "Point3"></property> -->
+	</bean>
+
+
+	<!-- <alias name="triangle" alias="myTriangle" /> -->
+
+
+</beans>
